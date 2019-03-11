@@ -1,18 +1,22 @@
 {
-    "name": "barryvdh/laravel-dompdf",
-    "description": "A DOMPDF Wrapper for Laravel",
+    "name": "baklysystems/laravel-dompdf",
+    "description": "A DOMPDF Wrapper for Laravel with arabic support",
     "license": "MIT",
-    "keywords": ["laravel", "dompdf", "pdf"],
+    "keywords": ["laravel", "dompdf", "pdf","arabic"],
     "authors": [
         {
             "name": "Barry vd. Heuvel",
             "email": "barryvdh@gmail.com"
+        },
+  	{
+            "name": "Hebatollah Moaz",
+            "email": "hebatollah.moaz@gmail.com"
         }
     ],
     "require": {
         "php": ">=7",
         "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x",
-        "dompdf/dompdf": "^0.8"
+        "baklysystems/dompdf": "^0.8"
     },
 
     "autoload": {
