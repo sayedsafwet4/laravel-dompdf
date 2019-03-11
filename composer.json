@@ -2,7 +2,7 @@
     "name": "baklysystems/laravel-dompdf",
     "description": "A DOMPDF Wrapper for Laravel with arabic support",
     "license": "MIT",
-    "keywords": ["laravel", "dompdf", "pdf","arabic"],
+    "keywords": ["laravel", "dompdf", "pdf", "arabic"],
     "authors": [
         {
             "name": "Barry vd. Heuvel",
