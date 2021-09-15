@@ -1,26 +1,47 @@
 <?php
+
 namespace Barryvdh\DomPDF;
 
 use Illuminate\Support\Facades\Facade as IlluminateFacade;
 
-class Facade extends IlluminateFacade {
+/**
+ * @method static \Barryvdh\DomPDF\PDF setPaper($paper, $orientation = 'portrait')
+ * @method static \Barryvdh\DomPDF\PDF setWarnings($warnings)
+ * @method static \Barryvdh\DomPDF\PDF setOptions(array $options)
+ * @method static \Barryvdh\DomPDF\PDF loadView($view, $data = array(), $mergeData = array(), $encoding = null)
+ * @method static \Barryvdh\DomPDF\PDF loadHTML($string, $encoding = null)
+ * @method static \Barryvdh\DomPDF\PDF loadFile($file)
+ * @method static \Barryvdh\DomPDF\PDF addInfo($info)
+ * @method static string output($options = [])
+ * @method static \Barryvdh\DomPDF\PDF save()
+ * @method static \Illuminate\Http\Response download($filename = 'document.pdf')
+ * @method static \Illuminate\Http\Response stream($filename = 'document.pdf')
+ *
+ */
+class Facade extends IlluminateFacade
+{
 
     /**
      * Get the registered name of the component.
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'dompdf.wrapper'; }
+    protected static function getFacadeAccessor()
+    {
+        return 'dompdf.wrapper';
+    }
 
     /**
      * Resolve a new instance
+     * @param string $method
+     * @param array<mixed> $args
+     * @return mixed
      */
     public static function __callStatic($method, $args)
     {
         $instance = static::$app->make(static::getFacadeAccessor());
 
-        switch (count($args))
-        {
+        switch (count($args)) {
             case 0:
                 return $instance->$method();
 
@@ -37,9 +58,11 @@ class Facade extends IlluminateFacade {
                 return $instance->$method($args[0], $args[1], $args[2], $args[3]);
 
             default:
-                return call_user_func_array(array($instance, $method), $args);
+                $callable = [$instance, $method];
+                if (! is_callable($callable)) {
+                    throw new \UnexpectedValueException("Method PDF::{$method}() does not exist.");
+                }
+                return call_user_func_array($callable, $args);
         }
     }
-
-
 }

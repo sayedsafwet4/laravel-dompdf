@@ -18,15 +18,25 @@
         "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x",
         "baklysystems/dompdf": "^1"
     },
-
+    "require-dev": {
+        "orchestra/testbench": "^4|^5|^6",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpro/grumphp": "^1",
+        "nunomaduro/larastan": "^0.7.10"
+    },
     "autoload": {
         "psr-4": {
             "Barryvdh\\DomPDF\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Barryvdh\\DomPDF\\Tests\\": "tests"
+        }
+    },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.8-dev"
+            "dev-master": "1.0-dev"
         },
         "laravel": {
             "providers": [
@@ -37,5 +47,12 @@
             }
         }
     },
-    "minimum-stability": "dev"
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=psr12 src/",
+        "fix-style": "phpcbf -p --standard=psr12 src/",
+        "phpstan": "phpstan analyze --memory-limit=-1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
