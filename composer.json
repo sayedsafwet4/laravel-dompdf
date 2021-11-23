@@ -1,5 +1,5 @@
 {
-    "name": "baklysystems/laravel-dompdf",
+    "name": "Kamalsroor/laravel-dompdf",
     "description": "A DOMPDF Wrapper for Laravel with arabic support",
     "license": "MIT",
     "keywords": ["laravel", "dompdf", "pdf", "arabic"],
@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": ">=7",
-        "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x",
+        "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x|6.X|7.X|8.X",
         "baklysystems/dompdf": "^1"
     },
     "require-dev": {
