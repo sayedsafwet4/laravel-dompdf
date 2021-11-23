@@ -1,5 +1,5 @@
 {
-    "name": "Kamalsroor/laravel-dompdf",
+    "name": "Kamalsroor/laravel-ar-dompdf",
     "description": "A DOMPDF Wrapper for Laravel with arabic support",
     "license": "MIT",
     "keywords": ["laravel", "dompdf", "pdf", "arabic"],
