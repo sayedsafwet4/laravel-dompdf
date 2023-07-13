@@ -1,62 +1,67 @@
 {
-    "name": "kamalsroor/laravel-ar-dompdf",
-    "description": "A DOMPDF Wrapper for Laravel with arabic support",
-    "license": "MIT",
-    "keywords": ["laravel", "dompdf", "pdf", "arabic"],
-    "authors": [
-       {
-            "name": "Kamal Sroor",
-            "email": "kamal.s.sroor@gmail.com"
-        },
-        {
-            "name": "Barry vd. Heuvel",
-            "email": "barryvdh@gmail.com"
-        },
-  	{
-            "name": "Hebatollah Moaz",
-            "email": "hebatollah.moaz@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=7",
-        "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x|6.X|7.X|8.X|9.x",
-        "baklysystems/dompdf": "^1"
+  "name": "sayedsafwet4/laravel-ar-dompdf",
+  "description": "A DOMPDF Wrapper for Laravel with arabic support",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "dompdf",
+    "pdf",
+    "arabic"
+  ],
+  "authors": [
+    {
+      "name": "Sayed Safwet",
+      "email": "sayedsafwet4@gmail.com"
     },
-    "require-dev": {
-        "orchestra/testbench": "^4|^5|^6",
-        "squizlabs/php_codesniffer": "^3.5",
-        "phpro/grumphp": "^1",
-        "nunomaduro/larastan": "^0.7.10"
+    {
+      "name": "Barry vd. Heuvel",
+      "email": "barryvdh@gmail.com"
     },
-    "autoload": {
-        "psr-4": {
-            "Barryvdh\\DomPDF\\": "src"
-        }
+    {
+      "name": "Hebatollah Moaz",
+      "email": "hebatollah.moaz@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7",
+    "illuminate/support": "5.5.x|5.6.x|5.7.x|5.8.x|6.X|7.X|8.X|9.x|10.x",
+    "baklysystems/dompdf": "^1"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4|^5|^6",
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpro/grumphp": "^1",
+    "nunomaduro/larastan": "^0.7.10"
+  },
+  "autoload": {
+    "psr-4": {
+      "Barryvdh\\DomPDF\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Barryvdh\\DomPDF\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Barryvdh\\DomPDF\\Tests\\": "tests"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
-        },
-        "laravel": {
-            "providers": [
-                "Barryvdh\\DomPDF\\ServiceProvider"
-            ],
-            "aliases": {
-                "PDF": "Barryvdh\\DomPDF\\Facade"
-            }
-        }
-    },
-    "scripts": {
-        "test": "phpunit",
-        "check-style": "phpcs -p --standard=psr12 src/",
-        "fix-style": "phpcbf -p --standard=psr12 src/",
-        "phpstan": "phpstan analyze --memory-limit=-1"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "laravel": {
+      "providers": [
+        "Barryvdh\\DomPDF\\ServiceProvider"
+      ],
+      "aliases": {
+        "PDF": "Barryvdh\\DomPDF\\Facade"
+      }
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "check-style": "phpcs -p --standard=psr12 src/",
+    "fix-style": "phpcbf -p --standard=psr12 src/",
+    "phpstan": "phpstan analyze --memory-limit=-1"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
